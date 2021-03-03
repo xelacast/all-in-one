@@ -1,7 +1,7 @@
 from selenium import webdriver
 from parts.botparts import selectable, clickable, randomSleep, formFiller, clickableWait
 from selenium.common.exceptions import WebDriverException
-from parts.users import BEST_BUY_USER
+from parts.users import BESTBUY_USER
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.proxy import Proxy, ProxyType
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
@@ -22,19 +22,11 @@ import random
 
 #! ADD ZYTE PROXY MANAGER FOR PROXIES
 
-headless_proxy = "127.0.0.1:3128"
-proxy = Proxy({
-    'proxyType': ProxyType.MANUAL,
-    'httpProxy': headless_proxy,
-    'ftpProxy': headless_proxy,
-    'sslProxy': headless_proxy,
-    'noProxy': ''
-})
-
 
 class BestBuy(object):
-
-    def __init__(self, user, target_url, target_product=None, billing=True):
+    # * instead of creating an instance of the user and target_url I can run a script parrellel on
+    # * one instance of start
+    def __init__(self, user='', target_url='', target_product=None, billing=True):
         # proxy and user agent will be set internally by a random pool of
         # proxies and user agents
         self.proxy = self.proxyPool()
@@ -108,11 +100,13 @@ class BestBuy(object):
         self.option.add_argument(f"proxy-server={self.proxy}")
         self.option.add_argument('--ignore-certificate-errors')
         self.option.add_argument('--ignore-ssl-errors')
+        prefs = {"profile.managed_default_content_settings.images": 2}
+        self.option.add_experimental_option("prefs", prefs)
 
     def start(self):
         # driver initialization
         self.driver = webdriver.Chrome(
-            executable_path='C:/Users/Alexander/Desktop/AutoAIO/purchasebots/botdriver/chromedriver.exe', options=self.option)
+            executable_path='chromedriver.exe', options=self.option)
 
         # Remove navigator.webdriver Flag using JavaScript
         self.driver.execute_script(
@@ -164,11 +158,13 @@ class BestBuy(object):
                     checkout = self.driver.find_element_by_xpath(
                         "//div[@class='checkout-buttons']/div[1]/button")
                     checkout.click()
+                    break
                 except WebDriverException:
-                    pass  # this will be the other instance of the checkout button location
+                    break
+                    # this will be the other instance of the checkout button location
                     # checkout = self.driver.find_element_by_xpath("")
                     # checkout.click()
-
+            # guest checkout
             randomSleep('test')
             clickable(
                 "//div[@class='cia-guest-content']/div[2]/button", self.driver)
