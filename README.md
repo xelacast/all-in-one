@@ -69,22 +69,22 @@ You can download this file and use it. It probably doesn't work and I am not goi
 
 Git clone the repository into the repository/directory of your choice.
 
-Make a python enviroment first
+Make a python enviroment first __
  `
  python3 -m venv <DIR> 
- `
-Then download the requirements
+ `__
+Then download the requirements __
+ 
  ` 
  python -m pip install requirements
+ `__
  `
-
-`
-cd <dir>
-`
+ cd <dir>
+ `__
 Run
-`
-python activator.py
-`
+ `
+ python activator.py
+ `__
 
 This project was never finished or maintained. This was my first major project as a self taught software developer. I created this with intuition and a few vidoes on youtube to learn how to use the software. I was already familiar with HTML, and CSS so crawling through the links on the websites were straight forward. The major problem I ran into was websites blocking my IP address and the headers I was using. To combat this I used a 3rd party service that allowed me to purchase proxies/IP addresses to make my self invisible to the website. I also made a pool of headers to change out.
 
