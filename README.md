@@ -1,6 +1,6 @@
 # Automated All In One Bot
 ## Purpose: To buy products that are being scalped by large scale bots
-### My intentions were to buy myself a RTX 3080 Graphics card so I could build my own PC. This was back in 2020 when RTX cards were selling for 2 to 3 times market value and I wasn't going to give into it. Unfortunately, I was never successful in getting the right time increments to watch for the restock of the product on the websites; and I couldn't get past the intial bot security wall even with proxies. Bestbuy's website API would change here and then. I dont think the crawlers would be able to get to the HTML classes and tags for it to crawl through. 
+My intentions were to buy myself a RTX 3080 Graphics card so I could build my own PC. This was back in 2020 when RTX cards were selling for 2 to 3 times market value and I wasn't going to give into it. Unfortunately, I was never successful in getting the right time increments to watch for the restock of the product on the websites; and I couldn't get past the intial bot security wall even with proxies. Bestbuy's website API would change here and then. I dont think the crawlers would be able to get to the HTML classes and tags for it to crawl through. 
 
 EDIT: Aug 4th, 2022
 ## The process I wanted the bots to take is 
