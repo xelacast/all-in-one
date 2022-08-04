@@ -69,22 +69,22 @@ You can download this file and use it. It probably doesn't work and I am not goi
 
 Git clone the repository into the repository/directory of your choice.
 
-Make a python enviroment first --
+Make a python enviroment first <br />
  `
  python3 -m venv <DIR> 
- ` --
-Then download the requirements --
+ `  <br />
+Then download the requirements <br />
  
  ` 
  python -m pip install requirements
- ` --
+ ` <br />
  `
  cd <dir>
- ` --
-Run
+ ` <br />
+Run <br />
  `
  python activator.py
- ` --
+ ` <br />
 This project was never finished or maintained. This was my first major project as a self taught software developer. I created this with intuition and a few vidoes on youtube to learn how to use the software. I was already familiar with HTML, and CSS so crawling through the links on the websites were straight forward. The major problem I ran into was websites blocking my IP address and the headers I was using. To combat this I used a 3rd party service that allowed me to purchase proxies/IP addresses to make my self invisible to the website. I also made a pool of headers to change out.
 
 Looking back I should have made many header and IP combos and chose from there. This would allow invisible consistency to stay hidden from the bot detectors on the websites. I am proud of this project becuase it was the first project I created on my own. Unfortunately I was not intuitive enough to create an automated system with it. I was not advanced enough to do this. If I was to create this again I would AWS servers with an express API that would listen for information from the Python Scrapy Bot. The bot would scrape data from each website with its determined IP/Headers every 5 mins during peak times of website restock. That data would be viewed depending on the status of the color, text, and clickableness of the button; when that criteria is met it would trigger the scalp bot to run and buy the product with the user entered data.
